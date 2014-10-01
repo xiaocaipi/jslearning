@@ -1,0 +1,40 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<HTML>
+<HEAD>
+<TITLE> New Document </TITLE>
+<META NAME="Generator" CONTENT="EditPlus">
+<META NAME="Author" CONTENT="">
+<META NAME="Keywords" CONTENT="">
+<META NAME="Description" CONTENT="">
+
+<SCRIPT LANGUAGE="JavaScript">
+<!--
+    function showTip(oEvent)
+    {
+    //alert(document.documentElement.scrollTop);
+       var oDiv = document.getElementById("divTip1");
+       oDiv.style.visibility ="visible";
+       oDiv.style.left = document.documentElement.scrollLeft+ oEvent.clientX+5;
+       oDiv.style.top = document.documentElement.scrollTop+oEvent.clientY+5;
+    }
+    function hiddenTip(oEvent)
+    {
+        var oDiv = document.getElementById("divTip1");
+        oDiv.style.visibility = "hidden";
+    }
+
+
+//-->
+</SCRIPT>
+</HEAD>
+
+<BODY>
+ <a href="javascript:void(0)"  onmouseover="showTip(event)" 
+onmouseout = "hiddenTip(event)">click me</a>
+<div id="divTip1" style="background-color:Yellow;position:absolute;visibility:hidden;padding:5px;">
+                      <span>这是我自己写的提示<br />
+                      这是我自己写的提示</span>
+</div>
+
+</BODY>
+</HTML>

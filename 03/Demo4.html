@@ -1,0 +1,111 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head><title>
+
+</title>
+<SCRIPT LANGUAGE="JavaScript">
+<!--
+   function setRowColor(oCheck)
+   {
+      var oTr = oCheck.parentNode.parentNode;
+      //alert(oCheck.checked);
+	  if (oCheck.checked)
+	  {
+	    
+		 if (oTr)
+		 {
+		    oTr.style.backgroundColor='yellow';
+		 }
+	  }else
+	  {
+         if (oTr)
+		 {
+		    oTr.style.backgroundColor='white';
+		 }
+	  }
+	
+   }
+
+   function init()
+   {
+      var oTable = document.getElementById("GridView1");
+	  if (oTable)
+	  {
+	     var oTrs = oTable.getElementsByTagName("tr");
+		 for(var i=1;i<oTrs.length;i++)
+		 {
+		     oTrs[i].onmouseover=function(){
+			    this.style.backgroundColor='yellow';
+			 }
+			 oTrs[i].onmouseout=function(){
+			    this.style.backgroundColor='white';
+			 }
+		 }
+	  }
+   }
+//-->
+</SCRIPT>
+
+</head>
+<body onload="init()">
+    <form name="form1" method="post" action="Default.aspx" id="form1">
+<div>
+
+<div>
+
+	<input type="hidden" name="__VIEWSTATEENCRYPTED" id="__VIEWSTATEENCRYPTED" value="" />
+</div>
+    <div>
+    
+        <div>
+	<table cellspacing="0" cellpadding="4" rules="all" border="1" id="GridView1" style="background-color:White;border-color:#CC9966;border-width:1px;border-style:None;border-collapse:collapse;">
+		<tr style="color:#FFFFCC;background-color:#990000;font-weight:bold;">
+			<th scope="col">
+                        <input ID="chkAll" type="checkbox" />
+                    </th><th scope="col">Au_Id</th><th scope="col">Au_Lname</th><th scope="col">Au_Fname</th><th scope="col">Phone</th><th scope="col">Addr</th><th scope="col">City</th><th scope="col">State</th><th scope="col">Zip</th>
+		</tr><tr style="color:#330099;background-color:White;">
+			<td>
+                        <input ID="chkID" type="checkbox" onclick="setRowColor(this)" />
+                    </td><td>341-22-1782</td><td>ddddd</td><td>Meander</td><td>913 843-0462</td><td>10 Mississippi Dr.</td><td>Lawrence</td><td>KS</td><td>66044</td>
+		</tr><tr style="color:#330099;background-color:White;">
+			<td>
+                        <input ID="chkID" type="checkbox"  onclick="setRowColor(this)"/>
+                    </td><td>472-27-2349</td><td>Gringlesby</td><td>Burt</td><td>707 938-6445</td><td>PO Box 792</td><td>Covelo</td><td>CA</td><td>95428</td>
+		</tr><tr style="color:#330099;background-color:White;">
+			<td>
+                        <input ID="chkID" type="checkbox"  onclick="setRowColor(this)" />
+                    </td><td>486-29-1786</td><td>Locksley</td><td>Charlene</td><td>415 585-4620</td><td>18 Broadway Av.</td><td>San Francisco</td><td>CA</td><td>94130</td>
+		</tr><tr style="color:#330099;background-color:White;">
+			<td>
+                        <input ID="chkID" type="checkbox"   onclick="setRowColor(this)"/>
+                    </td><td>672-71-3249</td><td>fff</td><td>eee</td><td>11111       </td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td>
+		</tr><tr style="color:#330099;background-color:White;">
+			<td>
+                        <input ID="chkID" type="checkbox"   onclick="setRowColor(this)"/>
+                    </td><td>dfdf</td><td>dff</td><td>bbb</td><td>11111       </td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td>
+		</tr><tr style="color:#330099;background-color:White;">
+			<td>
+                        <input ID="chkID" type="checkbox"  onclick="setRowColor(this)" />
+                    </td><td>ddd</td><td>fff</td><td>dffd</td><td>11111       </td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td>
+		</tr><tr style="color:#330099;background-color:White;">
+			<td>
+                        <input ID="chkID" type="checkbox"  onclick="setRowColor(this)" />
+                    </td><td>dfdf</td><td>dfdfd</td><td>dffdf</td><td>11111       </td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td>
+		</tr><tr style="color:#330099;background-color:White;">
+			<td>
+                        <input ID="chkID" type="checkbox"  onclick="setRowColor(this)" />
+                    </td><td>aaaaaaaa</td><td>aaaa</td><td>fddfd</td><td>11111       </td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td>
+		</tr><tr style="color:#330099;background-color:White;">
+			<td>
+                        <input ID="chkID" type="checkbox"  onclick="setRowColor(this)"/>
+                    </td><td>cccccc</td><td>ffff</td><td>rrr</td><td>11111       </td><td>gggg</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td>
+		</tr>
+	</table>
+</div>
+        
+    
+    </div>
+    </form>
+</body>
+</html>

@@ -1,0 +1,56 @@
+<html>
+   <head>
+      <title>createElementd()  Example</title>
+	  <SCRIPT LANGUAGE="JavaScript">
+	  <!--
+	     function CreateP()
+		 {
+		    var Op = document.createElement("p");
+			var oText = document.createTextNode("Hellow World");
+			Op.appendChild(oText);
+			document.body.appendChild(Op);
+
+		 }
+function removeElement()
+ {
+var oP = document.body.getElementsByTagName("p")[0];
+//document.body.removeChild(oP);
+oP.parentNode.removeChild(oP);
+}
+
+function ReplaceElement()
+ {
+   var oNewP = document.createElement("p");
+   var oText = document.createTextNode("aaaaaaaaaaaaaaaa");
+   oNewP.appendChild(oText);
+
+    var oOldP=  document.body.getElementsByTagName("p")[0];
+    oOldP.parentNode.replaceChild(oNewP,oOldP);
+}
+
+function insertElement()
+ {
+var oNewP = document.createElement("p");
+var oText = document.createTextNode("aaaaaaaaaaaaaaaa");
+oNewP.appendChild(oText);
+var oOldP=  document.body.getElementsByTagName("p")[0];
+document.body.insertBefore(oNewP,oOldP);
+}
+
+
+
+	  //-->
+	  </SCRIPT>
+   </head>
+   <body>
+        <p> Hellow</p>
+		<p> how are you?</p>
+        <p> ok</p>
+
+   <input type="button" value="createElement" onclick="CreateP()"/>
+   <input type="button" value="removeElement" onclick="removeElement()"/>
+    <input type="button" value="ReplaceElement" onclick="ReplaceElement()"/>
+	 <input type="button" value="insertElement" onclick="insertElement()"/>
+   </body>
+</html>
+
