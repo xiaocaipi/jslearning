@@ -1,0 +1,71 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<HTML>
+<HEAD>
+<TITLE> New Document </TITLE>
+<META NAME="Generator" CONTENT="EditPlus">
+<META NAME="Author" CONTENT="">
+<META NAME="Keywords" CONTENT="">
+<META NAME="Description" CONTENT="">
+<SCRIPT LANGUAGE="JavaScript">
+<!--
+
+function shiftUp(oListBox,iIndex)
+{
+   if (iIndex>0)
+   {
+      var oOption = oListBox.options[iIndex];
+	  var oPrevOption = oListBox.options[iIndex-1];
+	  oListBox.insertBefore(oOption,oPrevOption);
+   }
+}
+function shiftDown(oListBox,iIndex)
+{
+   if (iIndex<oListBox.options.length-1)
+   {
+      var oOption = oListBox.options[iIndex];
+	  var oNextOption = oListBox.options[iIndex+1];
+	  oListBox.insertBefore(oNextOption,oOption);
+   }
+}
+
+function shiftUpOption()
+{
+   var oListBox = document.getElementById("fromList");
+   shiftUp(oListBox,oListBox.selectedIndex);
+}
+
+function shiftDownOption()
+{
+   var oListBox = document.getElementById("fromList");
+   shiftDown(oListBox,oListBox.selectedIndex);
+}
+
+//-->
+</SCRIPT>
+</HEAD>
+
+<BODY>
+<table border=0 width=270>
+<tr>
+<td style="width:100px">
+<select id="fromList" size="10" style="width:100px">
+  <option value="1" selected>18-21</option>
+  <option value="2">22-25</option>
+  <option value="3" selected>26-29</option>
+  <option value="4">over 35</option>
+</select>
+</td>
+<td style="width:50px;text-align:center">
+<input type="button" value="¡ü" onclick="shiftUpOption()"/><p/>
+<input type="button" value="¡ý" onclick="shiftDownOption()"/>
+<td>
+
+</td>
+<td>
+
+</td>
+</tr>
+</table>
+
+</BODY>
+</HTML>

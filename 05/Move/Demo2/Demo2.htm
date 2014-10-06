@@ -1,0 +1,46 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<HTML>
+<HEAD>
+<TITLE> New Document </TITLE>
+<META NAME="Generator" CONTENT="EditPlus">
+<META NAME="Author" CONTENT="">
+<META NAME="Keywords" CONTENT="">
+<META NAME="Description" CONTENT="">
+<SCRIPT LANGUAGE="JavaScript">
+<!--
+function handleMouseDown() {
+                var oEvent = window.event;
+                var oDiv = document.getElementById("div1");
+				document.body.attachEvent("onmousemove",handleMouseMove);
+				document.body.attachEvent("onmouseup",handleMouseUp);
+            }
+function handleMouseMove() {
+                var oEvent = window.event;
+                var oDiv = document.getElementById("div1");
+                oDiv.style.left = oEvent.clientX;
+                oDiv.style.top = oEvent.clientY;
+				oDiv.style.cursor="move";
+            }
+function handleMouseUp() {
+                var oDiv = document.getElementById("div1");
+                document.body.detachEvent("onmousemove",handleMouseMove);
+				document.body.detachEvent("onmouseup",handleMouseUp);
+				oDiv.style.cursor="default";
+            }
+//-->
+</SCRIPT>
+
+        <style type="text/css">
+            #div1 {
+                background-color: red;
+                height: 100px;
+                width: 100px;
+                position: absolute;
+            }
+        </style>
+    </head>
+    <body>
+        <p>Try dragging the red square.</p>
+        <p><div id="div1" onmousedown="handleMouseDown(event)"></div> </p>
+    </body>
+</HTML>

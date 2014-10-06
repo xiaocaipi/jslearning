@@ -1,0 +1,106 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<HTML>
+<HEAD>
+<TITLE> New Document </TITLE>
+<META NAME="Generator" CONTENT="EditPlus">
+<META NAME="Author" CONTENT="">
+<META NAME="Keywords" CONTENT="">
+<META NAME="Description" CONTENT="">
+<SCRIPT LANGUAGE="JavaScript">
+<!--
+
+
+  //ÉýÐò
+   function comparisonTRs(oTR1,oTR2){
+      var value1 = oTR1.cells[0].firstChild.nodeValue;
+	  var value2 = oTR2.cells[0].firstChild.nodeValue;
+	  if (value1<value2)
+		 return -1
+	  else if (value1>value2)
+		 return 1
+	  else
+		return 0
+   }
+   var sourceHeader = "";
+	function SortTable(sTableID,header)
+	{
+	   
+	   var oTable = document.getElementById(sTableID);
+	   var oTBody = oTable.tBodies[0];
+	   var colDataRows = oTBody.rows;
+	   var oTRs = new Array();
+	   for(var i=0;i<colDataRows.length;i++)
+	   {
+	      oTRs.push(colDataRows[i]);
+	   }
+	   if (!header.sortType)
+	   {
+	      //alert("ok");
+		  sourceHeader = header.innerHTML;
+	      oTRs.sort(comparisonTRs);
+		  header.sortType="ASC";
+		  header.innerHTML=sourceHeader+"¡ü";
+	   }else
+	   {
+	      oTRs.reverse();
+		  header.innerHTML=sourceHeader+"¡ý";
+		  if (header.sortType=="ASC")
+		  {
+		     header.innerHTML=sourceHeader+"¡ý";
+			 header.sortType="DESC";
+		  }else
+		  {
+		     header.sortType="ASC";
+			 header.innerHTML=sourceHeader+"¡ü";
+
+		  }
+	   }
+	   
+	   var oFragment = document.createDocumentFragment();
+	   for(var i=0;i<oTRs.length;i++)
+	   {
+	     oFragment.appendChild(oTRs[i]);
+	   }
+	   oTBody.appendChild(oFragment);
+	}
+
+
+//-->
+</SCRIPT>
+</HEAD>
+
+<BODY>
+<SCRIPT LANGUAGE="JavaScript">
+<!--
+ 
+
+//-->
+</SCRIPT>
+<table border="1" id="table1" width=200>
+   <thead>
+     <tr>
+	    <th onclick = "SortTable('table1',this)" style="cursor:pointer">first Name</th>
+	 </tr>
+	</thead>
+	<tbody>
+	   <tr>
+	      <td>zhang</td>
+	   </tr>
+       <tr>
+	      <td>wang</td>
+	   </tr>
+	   <tr>
+	      <td>li</td>
+	   </tr>
+	   <tr>
+	      <td>zhaoliu</td>
+	   </tr>
+	   <tr>
+	      <td>aaaa</td>
+	   </tr>
+	</tbody>
+</table>
+
+
+</BODY>
+</HTML>

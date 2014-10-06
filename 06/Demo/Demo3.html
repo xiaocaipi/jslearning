@@ -1,0 +1,42 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<HTML>
+<HEAD>
+<TITLE> New Document </TITLE>
+<META NAME="Generator" CONTENT="EditPlus">
+<META NAME="Author" CONTENT="">
+<META NAME="Keywords" CONTENT="">
+<META NAME="Description" CONTENT="">
+<SCRIPT LANGUAGE="JavaScript">
+<!--
+	/*function Car(){};
+	Car.prototype.color = "red";
+	Car.prototype.doors = 4;
+	Car.prototype.showColor = function(){
+		alert(this.color);
+	}
+	Car.prototype.drivers = new Array('a','b');*/
+	function Car(sColor,iDoors,iMpg){
+        this.color = sColor;
+        this.doors = iDoors;
+        this.mpg = iMpg;
+        this.drivers = new Array('a','b');
+     }
+	Car.prototype.ShowColor = function(){
+		 alert(this.color);
+	}
+
+
+	var car1= new Car();
+	var car2 = new Car();
+	car1.drivers.push("c");
+	alert(car1.drivers);
+	alert(car2.drivers);
+	
+//-->
+</SCRIPT>
+</HEAD>
+
+<BODY>
+
+</BODY>
+</HTML>

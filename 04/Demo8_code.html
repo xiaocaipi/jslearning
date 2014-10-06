@@ -1,0 +1,99 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<HTML>
+<HEAD>
+<TITLE> New Document </TITLE>
+<META NAME="Generator" CONTENT="EditPlus">
+<META NAME="Author" CONTENT="">
+<META NAME="Keywords" CONTENT="">
+<META NAME="Description" CONTENT="">
+</HEAD>
+
+<BODY >
+<textarea style="border:0px;font-size:16px;" cols=100 rows=80>
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<HTML>
+<HEAD>
+<TITLE> New Document </TITLE>
+<META NAME="Generator" CONTENT="EditPlus">
+<META NAME="Author" CONTENT="">
+<META NAME="Keywords" CONTENT="">
+<META NAME="Description" CONTENT="">
+<SCRIPT LANGUAGE="JavaScript">
+<!--
+function autoSuggestMatch(sText,arrValues)
+{
+   var arrResult = new Array();
+   if (sText!="")
+   {
+      for(var i=0;i<arrValues.length;i++)
+      {
+          if (arrValues[i].indexOf(sText) == 0 )
+          {
+                arrResult.push(arrValues[i]);
+          }
+      }
+      return arrResult;
+   }
+}
+
+function autoSuggest(oTextBox,arrValues,sListBoxId)
+{
+     var oListBox = document.getElementById(sListBoxId);
+     clear(oListBox);
+     var arrMatches = autoSuggestMatch(oTextBox.value,arrValues);
+     for(var i=0;i<arrMatches.length;i++)
+     {
+         add(oListBox,arrMatches[i]);
+     }
+}
+function clear(oListBox)
+{
+    for(var i=oListBox.options.length-1;i>=0;i--)
+    {
+       oListBox.remove(i);
+    }
+}
+function add(oListBox,sName,sValue)
+{
+  var oPtion = document.createElement("option");
+  oPtion.appendChild(document.createTextNode(sName));
+  if (arguments.length == 3)
+  {
+    oPtion.setAttribute("value",sValue);
+  }
+  oListBox.appendChild(oPtion);
+}
+
+var arrColors=["red","orange","yellow","green","blue","indigo","violet","brown","black","tan","ivory","navy","aqua","white","purple","pink","gray","silver",
+"aaa","a","aa","aaaa","aaaaaa"]
+arrColors.sort();
+function selText(oListBox,sTextBoxID)
+{
+   var oTextBox = document.getElementById(sTextBoxID);
+   if (oListBox.selectedIndex>-1)
+   {
+       oTextBox.value=oListBox.options[oListBox.selectedIndex].text;
+   }
+}
+
+
+//-->
+</SCRIPT>
+</HEAD>
+
+<BODY>
+<table border=0 style="width:100px;height:100px" cellpadding="0" cellspacing="0">
+  <tr><td>
+      <input type="text" value="" id="txtColor" onkeyup="autoSuggest(this,arrColors,'listColor')" />
+  </td></tr>
+  <tr><td>
+       <select id="listColor" size="5" style="width:200px" onclick="selText(this,'txtColor')"/></select>
+  </td></tr>
+</table>
+</BODY>
+</HTML>
+
+</textarea>
+
+</BODY>
+</HTML>

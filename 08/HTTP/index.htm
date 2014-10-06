@@ -1,0 +1,31 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" >
+<head>
+    <title>无标题页</title>
+    <script type="text/javascript" src="js/Http.js"></script>
+    <script type="text/javascript">
+      function send()
+      {
+         var fnLoading =function()
+         {
+            var oDiv = document.getElementById("divLoading");
+            if (oDiv)
+            {
+               oDiv.innerHTML="<font color='red'>Loading...</font>";
+            }
+         }
+         
+         var fnCallBack = function(result)
+         {
+            var oDiv = document.getElementById("divLoading");
+            oDiv.innerHTML = result;
+         }
+         Http.Get("Default.aspx",fnLoading,fnCallBack);
+       }
+    </script>
+</head>
+<body>
+<div id="divLoading"></div>
+<input type="button" id="btnSend" value="Send" onclick="send()"/>
+</body>
+</html>

@@ -1,0 +1,67 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<HTML>
+<HEAD>
+<TITLE> New Document </TITLE>
+<META NAME="Generator" CONTENT="EditPlus">
+<META NAME="Author" CONTENT="">
+<META NAME="Keywords" CONTENT="">
+<META NAME="Description" CONTENT="">
+</HEAD>
+
+<BODY>
+<textarea style="border:0px;font-size:16px;" cols=100 rows=80>
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<HTML>
+<HEAD>
+<TITLE> New Document </TITLE>
+<META NAME="Generator" CONTENT="EditPlus">
+<META NAME="Author" CONTENT="">
+<META NAME="Keywords" CONTENT="">
+<META NAME="Description" CONTENT="">
+<SCRIPT LANGUAGE="JavaScript">
+<!--
+   function setTextFocuse()
+   {
+       var oInput = document.getElementsByTagName("input");
+	   var oTextArea = document.getElementsByTagName("textarea");
+	   for(var i=0;i<oInput.length;i++)
+	   {
+	      if (oInput[i].type=="text" || oInput[i].type=="password")
+	      {
+		     oInput[i].onfocus = function(){this.select();}
+	      }
+	   }
+
+	   for(var i=0;i<oTextArea.length;i++)
+	   {
+	      if (oTextArea[i].type=="text" || oTextArea[i].type=="password")
+	      {
+		     oTextArea[i].onfocus = function(){this.select();}
+	      }
+	   }
+   }
+//-->
+</SCRIPT>
+</HEAD>
+
+<BODY onload="setTextFocuse()">
+<form action="#" name="form1">
+   <input type="text" name="txt3" value="aaa"/>
+   <br/>
+   <input type="text" name="txtUser" value="aaa"/>
+   <br/>
+   <input type="password" name="txtPass"/>
+   <br/>
+   <input type="text" name="txt1" value="bbb"/>
+   <br/>
+   <input type="text" name="txt2" value="ccc"/>
+
+   <input type="submit" name="mysubmit" value="Ìá½»"   />
+   <input type="reset" value="ÖØÖÃ"  />
+</form>
+</BODY>
+</HTML>
+
+</textarea>
+</BODY>
+</HTML>

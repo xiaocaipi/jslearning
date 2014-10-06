@@ -1,0 +1,43 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<HTML>
+<HEAD>
+<TITLE> New Document </TITLE>
+<META NAME="Generator" CONTENT="EditPlus">
+<META NAME="Author" CONTENT="">
+<META NAME="Keywords" CONTENT="">
+<META NAME="Description" CONTENT="">
+<SCRIPT LANGUAGE="JavaScript">
+<!--
+        
+		 function numericScroll(oTextBox)
+		 {
+		           oEvent = window.event;
+                   var iValue = oTextBox.value.length ==0?0:parseInt(oTextBox.value);
+                   var iMax = oTextBox.getAttribute("Max");
+                   var iMin = oTextBox.getAttribute("Min");
+                   if (oEvent.keyCode==38)
+                   {
+                       if (iMax==null || iValue<parseInt(iMax))
+                       {
+                          oTextBox.value = iValue+1;
+                       } 
+                   }else if (oEvent.keyCode == 40)
+                   {
+                       if (iMax==null || iValue>parseInt(iMin))
+                       {
+                          oTextBox.value = iValue-1;
+                       }
+                          
+                   }
+		 }
+//-->
+</SCRIPT>
+</HEAD>
+
+<BODY  >
+<form action="#" name="form1" >
+   <input type="text" name="txtNumeric" value="0" Max="10" Min="0" onkeydown="numericScroll(this)"  />
+</form>
+
+</BODY>
+</HTML>

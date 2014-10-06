@@ -1,0 +1,74 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<HTML>
+<HEAD>
+<TITLE> New Document </TITLE>
+<META NAME="Generator" CONTENT="EditPlus">
+<META NAME="Author" CONTENT="">
+<META NAME="Keywords" CONTENT="">
+<META NAME="Description" CONTENT="">
+<SCRIPT LANGUAGE="JavaScript">
+<!--
+		 function enterForward(oTextBox)
+		 {
+		   var oForm = oTextBox.form;
+		   if (oForm.elements[oForm.elements.length-1]!=oTextBox)
+		   {
+		      for(var i=0;i<oForm.elements.length;i++)
+			  {
+			     if (oForm.elements[i]==oTextBox)
+			     {
+				    for(var j=i+1;j<oForm.elements.length;j++)
+					{
+					   oForm.elements[j].focus();
+					   return;
+					}
+			     }
+			  }
+		     
+		   }
+		 }
+
+
+		 function AttachKeyDown()
+		 {
+		   var oInputs = document.getElementsByTagName("input");
+		   for(var i=0;i<oInputs.length;i++)
+		   {
+		       if (oInputs[i].type!=="hidden")
+		       {
+			      oInputs[i].onkeydown=function(){
+				    var event = window.event;
+					//event 有按下键的键码值
+					if (event.keyCode==13)
+					{
+					    enterForward(this);
+					}
+                  };
+		       }
+		   }
+		 }
+//-->
+</SCRIPT>
+</HEAD>
+
+<BODY onload="AttachKeyDown()" >
+<form action="#" name="form1" >
+   <input type="text" name="txt3" value="" maxlength="10" />
+
+   <br/>
+   <input type="text" name="txtUser" value="" maxlength="6" />
+   <br/>
+   <input type="password" name="txtPass" maxlength="5"/>
+   <br/>
+   <input type="text" name="txt1" value="" maxlength="5"/>
+   <br/>
+   <input type="text" name="txt2" value="" maxlength="10"/>
+
+    <textarea rows=10 cols="25" maxlength="20"></textarea>
+
+   <input type="button" name="mysubmit" value="提交"   />
+   <input type="reset" value="重置"  />
+</form>
+
+</BODY>
+</HTML>

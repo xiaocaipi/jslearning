@@ -1,0 +1,102 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<HTML>
+<HEAD>
+<TITLE> New Document </TITLE>
+<META NAME="Generator" CONTENT="EditPlus">
+<META NAME="Author" CONTENT="">
+<META NAME="Keywords" CONTENT="">
+<META NAME="Description" CONTENT="">
+<SCRIPT LANGUAGE="JavaScript">
+<!--
+       function genCompareTo(iCol){
+	      return function compareTRs(oTR1,oTR2)
+		  {
+		     var sValue1 = oTR1.cells[iCol].firstChild.nodeValue;
+			 var sValue2 = oTR2.cells[iCol].firstChild.nodeValue;
+
+			 return sValue1.localeCompare(sValue2);
+		  }
+	   }
+
+	function sortTable(sTableID,header,colindex)
+	{
+	   
+	   var oTable = document.getElementById(sTableID);
+	   var oTBody = oTable.tBodies[0];
+	   var colDataRows = oTBody.rows;
+	   var oTRs = new Array();
+	   for(var i=0;i<colDataRows.length;i++)
+	   {
+	      oTRs.push(colDataRows[i]);
+	   }
+	   if (!header.sortType)
+	   {
+	      oTRs.sort(genCompareTo(colindex));
+		  header.sortType="ASC";
+		  header.sourceName = header.innerText;
+		  header.innerHTML=header.sourceName+"¡ü";
+	   }else
+	   {
+	      oTRs.reverse();
+		  header.innerHTML=header.sourceName+"¡ý";
+		  if (header.sortType=="ASC")
+		  {
+		     header.innerHTML=header.sourceName+"¡ý";
+			 header.sortType="DESC";
+		  }else
+		  {
+		     header.sortType="ASC";
+			 header.innerHTML=header.sourceName+"¡ü";
+
+		  }
+	   }
+	   
+	   var oFragment = document.createDocumentFragment();
+	   for(var i=0;i<oTRs.length;i++)
+	   {
+	     oFragment.appendChild(oTRs[i]);
+	   }
+	   oTBody.appendChild(oFragment);
+	}
+//-->
+</SCRIPT>
+</HEAD>
+
+<BODY>
+ <p>Click on the table header to sort in ascending order.</p>
+        <table border="1" id="tblSort">
+            <thead>
+                <tr>
+                    <th onclick="sortTable('tblSort',this, 0)" style="cursor:pointer">Last Name</th>
+                    <th onclick="sortTable('tblSort',this, 1)" style="cursor:pointer">First Name</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Smith</td>
+                    <td>John</td>
+                </tr>
+                <tr>
+                    <td>Johnson</td>
+                    <td>Betty</td>
+                </tr>
+                <tr>
+                    <td>Henderson</td>
+                    <td>Nathan</td>
+                </tr>
+                <tr>
+                    <td>Williams</td>
+                    <td>James</td>
+                </tr>
+                <tr>
+                    <td>Gilliam</td>
+                    <td>Michael</td>
+                </tr>
+                <tr>
+                    <td>Walker</td>
+                    <td>Matthew</td>
+                </tr>
+            </tbody>
+        </table>        
+</BODY>
+</HTML>

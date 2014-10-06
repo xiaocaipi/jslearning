@@ -1,0 +1,58 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<HTML>
+<HEAD>
+<TITLE> New Document </TITLE>
+<META NAME="Generator" CONTENT="EditPlus">
+<META NAME="Author" CONTENT="">
+<META NAME="Keywords" CONTENT="">
+<META NAME="Description" CONTENT="">
+<SCRIPT LANGUAGE="JavaScript">
+<!--
+   function CreateCar(){
+     var oCar = new Object();
+	 oCar.Color = "red";
+	 oCar.doors = 4;
+	 oCar.mpg = 23;
+	 oCar.ShowColor = function(){
+	     alert(this.Color);
+	 }
+	 return oCar;
+   }
+
+   function fn()
+   {
+      var oCar1 = CreateCar();
+	  oCar1.Color="blue";
+	  oCar1.ShowColor();
+
+	  var oCar2 = CreateCar();
+	  oCar2.Color="yellow";
+	  oCar2.ShowColor();
+   }
+
+   function Person(name,age)
+   {
+     this.Name=name;
+	 this.Age=age;
+	 this.ShowAge=function(){
+	     alert(this.Age);
+	 }
+   }
+
+   function CallPerson()
+   {
+      var p = new Person("zhang",18);
+	  alert(p.Name);
+	  p.ShowAge();
+   }
+
+//-->
+</SCRIPT>
+</HEAD>
+
+<BODY>
+<input type="button" value="createCar" onclick="fn()"/>
+
+<input type="button" value="CallPerson" onclick="CallPerson()"/>
+</BODY>
+</HTML>

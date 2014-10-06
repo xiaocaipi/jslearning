@@ -1,0 +1,120 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<HTML>
+<HEAD>
+<TITLE> New Document </TITLE>
+<META NAME="Generator" CONTENT="EditPlus">
+<META NAME="Author" CONTENT="">
+<META NAME="Keywords" CONTENT="">
+<META NAME="Description" CONTENT="">
+<SCRIPT LANGUAGE="JavaScript">
+<!--
+   function getValue()
+   {
+   var oListbox = document.getElementById("selAge");
+  //alert(oListbox.options[1].text)
+//alert(oListbox.selectedIndex);
+//alert(oListbox.options[oListbox.selectedIndex].text);
+oListbox.selectedIndex = -1;
+
+
+
+   }
+
+function getSelectedIndexs(oListBox)
+{
+   var arrIndexs = new Array();
+   for(var i=0;i<oListBox.options.length;i++)
+   {
+      if (oListBox.options[i].selected)
+      {
+          arrIndexs.push(i);
+      }
+   }
+   return arrIndexs;
+}
+
+function getSelectedString()
+{
+    var oListBox = document.getElementById("selAge");
+	//alert(getSelectedIndexs(oListBox).text);
+	var objs = getSelectedIndexs(oListBox);
+	for(var i=0;i<objs.length;i++)
+	{
+	   alert(objs[i].value);
+	}
+
+}
+
+function add(oListBox,sName,sValue)
+{
+  var oPtion = document.createElement("option");
+  oPtion.appendChild(document.createTextNode(sName));
+  if (arguments.length == 3)
+  {
+    oPtion.setAttribute("value",sValue);
+  }
+  oListBox.appendChild(oPtion);
+}
+
+function Del(index)
+{
+   var oListBox = document.getElementById("selAge");
+   //oListBox.options[index]=null;
+   oListBox.remove(index);
+
+}
+
+function move(oListFrom,oListTo,index)
+{
+    var oOption = oListFrom.options[index];
+	if (oOption)
+	{
+	   oListTo.appendChild(oOption);
+	}
+}
+
+function goRight()
+{
+   var oListFrom = document.getElementById("fromList");
+   var oListTo = document.getElementById("toList");
+
+   move(oListFrom,oListTo,oListFrom.selectedIndex);
+}
+
+function goLeft()
+{
+   var oListFrom = document.getElementById("toList");
+   var oListTo = document.getElementById("FromList");
+
+   move(oListFrom,oListTo,oListFrom.selectedIndex);
+}
+
+//-->
+</SCRIPT>
+</HEAD>
+
+<BODY>
+<table border=0 width=250>
+<tr>
+<td style="width:100px">
+<select id="fromList" size="10" style="width:100px">
+  <option value="1" selected>18-21</option>
+  <option value="2">22-25</option>
+  <option value="3" selected>26-29</option>
+  <option value="4">over 35</option>
+</select>
+</td>
+<td style="width:50px;text-align:center">
+<input type="button" value=" << " onclick="goLeft()"/><p/>
+<input type="button" value=" >> " onclick="goRight()"/>
+</td>
+<td>
+<select  id="toList" size="10"  style="width:100px">
+
+</select>
+</td>
+</tr>
+</table>
+
+</BODY>
+</HTML>
